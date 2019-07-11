@@ -1,0 +1,38 @@
+using namespace std;
+
+
+void getuglyno(unsigned n,long long unsigned ugly[]){
+   long long unsigned nuglyno=1,nmul2=2,nmul3=3,nmul5=5,i2=0,i3=0,i5=0;
+    ugly[0]=1;
+    for(unsigned i=1;i<n;i++){
+        nuglyno=min(nmul2,min(nmul3,nmul5));
+        ugly[i]=nuglyno;
+        if(nuglyno==nmul2){
+            i2++;
+            nmul2=ugly[i2]*2;
+               }
+          if(nuglyno==nmul3){
+            i3++;
+            nmul3=ugly[i3]*3;
+            }
+            if(nuglyno==nmul5){
+                i5++;
+                nmul5=ugly[i5]*5;
+            }
+    }
+}
+
+int main() {
+ //code
+ int t;
+ cin>>t;
+ 
+      long long unsigned ugly[10000];
+      getuglyno(10000,ugly);
+ while(t--){
+     int  x;
+     cin>>x;
+     cout<<ugly[x-1]<<endl;
+ }
+ return 0;
+}
