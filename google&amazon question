@@ -1,0 +1,14 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+	int t,n;
+	cin>>t;
+	while(t--)
+	{
+	    cin>>n;
+	    cout<<1+n+n+n*(n-1)/2+n*(n-1)+n*(n-1)*(n-2)/2<<endl;
+      //1(all a) + n(1b rest a) + n(1c rest a) + n*(n-1)/2 (2c rest a) + n*(n-1) (1b 1c rest a) + n*(n-1)*(n-2)/2 (1b 2c rest a)
+	}
+	return 0;
+}
